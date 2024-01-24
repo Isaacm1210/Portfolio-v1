@@ -1,27 +1,34 @@
 *{
     box-sizing: inherit;
     --bg-grey: rgb(26, 26, 26);
-    --fs-heading: 36px;
+    --fs-heading: 40px;
     --fs-xxl: 32px;
     --fs-xl: 24px;
     --fs-l: 20px;
     --fs-m: 18px;
-    --fs-sm: 16;
+    --fs-sm: 16px;
+    --fs-xs: 14px;
 }
 
 html{
     box-sizing: border-box;
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(90deg, rgb(0, 0, 0), var(--bg-grey));
+    background: black;
+    /* background: linear-gradient(90deg, rgb(0, 0, 0), var(--bg-grey)); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: rgb(255, 255, 255);
     font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;;
     margin: 0;
     display: flex;
+    flex-direction: column;
+    top: 0;
 }
 
 .social {
@@ -41,7 +48,7 @@ body {
         .social-icon{
             margin: auto;
             padding: 10px;
-            background: radial-gradient(circle, rgba(0, 217, 255, 0.377) 5%, rgb(0, 0, 0) 80%);
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.377) 5%, rgba(0, 0, 0, 0) 80%);
             height: 40px;
             width: 40px;
         }
@@ -71,5 +78,34 @@ main{
 }
 
 .content{
-    height: 100vh;
+    height: 90vh;
+    padding-top: 20%;
+}
+.intro-p{
+    font-size: var(--fs-sm);
+}
+
+h1{
+    font-size: var( --fs-heading);
+}
+
+h2{
+    font-size: var(--fs-xxl);
+}
+
+h3{
+    font-size: var(--fs-m);
+}
+
+p{
+    font-size: var(--fs-xs);
+}
+.intro{
+    padding-top: 30%;
+}
+
+ul.tools-list{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 240px));
+    gap: 10px;
 }
