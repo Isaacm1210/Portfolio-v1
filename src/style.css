@@ -36,7 +36,7 @@ body {
     flex-direction: column;
     top: 0;
     counter-reset: section;
-    
+    counter-reset: item;
 }
 
 .social {
@@ -73,7 +73,10 @@ body {
      background: 
              radial-gradient(circle at 30% bottom, var(--yellow-fade) , rgba(0, 0, 0, 0) 12%),
              radial-gradient(circle at 50% 95%,var(--blue-fade) , rgba(0, 0, 0, 0) 12%),
-             radial-gradient(circle at 70% 100%,var(--purple-fade) , rgba(0, 0, 0, 0) 12%);
+             radial-gradient(circle at 70% 100%,var(--purple-fade) , rgba(0, 0, 0, 0) 12%),
+             radial-gradient(circle at 30% top, var(--yellow-fade) , rgba(0, 0, 0, 0) 14%),
+             radial-gradient(circle at 50% 5%,var(--blue-fade) , rgba(0, 0, 0, 0) 14%),
+             radial-gradient(circle at 70% top,var(--purple-fade) , rgba(0, 0, 0, 0) 14%);
 }
 
 .section-heading::before{
@@ -167,19 +170,17 @@ ul.tools-list{
     display: flex;
     justify-content: end;
     align-items: center;
-    backdrop-filter: blur(20px);
-    transform: translateY(calc(var(90) * -1));
+    backdrop-filter: blur(5px);
 }
 
 .resume-button{
     border: solid 2px var(--text-colour);
     border-radius: 5px;
-    width: 80px;
-    height: 40px;
     background: none;
     color: var(--text-colour);
-    padding: 0;
     margin: auto 30px;
+    padding: 0.6rem 1em;
+    line-height: 1;
 }
 .resume-button:hover{
     background-color: var(--button-fade);
@@ -188,10 +189,14 @@ ul.tools-list{
 
 .header-list{
     width: 600px;
-}
-.header-list, li{
     display: inline;
     display: flex;
     justify-content: space-between;
     margin: auto;
+}
+.nav-subject::before{
+    counter-increment: item;
+    content: "0" counter(item) ".";
+    color: var(--text-colour);
+    font-size: var(--fs-xs);
 }
