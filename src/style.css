@@ -8,6 +8,10 @@
     --fs-m: 18px;
     --fs-sm: 16px;
     --fs-xs: 14px;
+    --yellow-fade: rgba(255, 191, 14, 0.1);
+    --blue-fade:rgba(14, 227, 255, 0.1);
+    --purple-fade: rgba(255, 14, 223, 0.1);
+    --red-fade: rgba(255, 26, 64, 0.1);
 }
 
 html{
@@ -29,6 +33,8 @@ body {
     display: flex;
     flex-direction: column;
     top: 0;
+    counter-reset: section;
+    
 }
 
 .social {
@@ -48,7 +54,7 @@ body {
         .social-icon{
             margin: auto;
             padding: 10px;
-            background: radial-gradient(circle, rgba(0, 217, 255, 0.377) 5%, rgba(0, 0, 0, 0) 80%);
+            /* background: radial-gradient(circle, rgba(0, 217, 255, 0.377) 5%, rgba(0, 0, 0, 0) 80%); */
             height: 40px;
             width: 40px;
         }
@@ -60,6 +66,20 @@ body {
             margin: 5px auto; 
         }
     }
+}
+.main-container{
+    background: radial-gradient(circle at right top,var(--blue-fade) 5%, rgba(0, 0, 0, 0) 20%),
+             radial-gradient(circle at left center,var(--red-fade) 5%, rgba(0, 0, 0, 0) 40%),
+             radial-gradient(circle at 30% bottom, var(--yellow-fade) , rgba(0, 0, 0, 0) 12%),
+             radial-gradient(circle at 50% 95%,var(--blue-fade) , rgba(0, 0, 0, 0) 12%),
+             radial-gradient(circle at 70% 100%,var(--purple-fade) , rgba(0, 0, 0, 0) 12%);
+}
+
+.section-heading::before{
+    counter-increment: section;
+    content: "0" counter(section) ". ";
+    font-size: var(--fs-l);
+    color: rgb(51, 255, 170);
 }
 
 ul {
@@ -73,7 +93,7 @@ a {
 
 main{
     width: 50%;
-    height: 100%;
+
     margin: auto;
 }
 
@@ -85,8 +105,27 @@ main{
     font-size: var(--fs-sm);
 }
 
-h1{
+.title{
     font-size: var( --fs-heading);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.title::before{
+    width: 150px;
+    height: 1px;
+    background-color: white;
+    content: "";
+    margin-right: 10px;
+}
+.title::after{
+    width: 150px;
+    height: 1px;
+    background-color: white;
+    content: "";
+    margin-left: 10px;
 }
 
 h2{
@@ -102,6 +141,17 @@ p{
 }
 .intro{
     padding-top: 30%;
+    
+}
+
+footer{
+    background: none;
+    position: relative;
+    width: 50%;
+}
+.footer{
+    background: none;
+    width: 50%;
 }
 
 ul.tools-list{
