@@ -206,6 +206,7 @@ footer{
     display: flex;
     justify-content: end;
     align-items: center;
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
 
@@ -217,6 +218,7 @@ footer{
     margin: auto 30px;
     padding: 0.6rem 1em;
     line-height: 1;
+    z-index: 2;
 }
 .resume-button:hover{
     background-color: var(--button-fade);
